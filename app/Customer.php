@@ -27,5 +27,9 @@ class Customer extends Model
 	public function address() {
         return $this->belongsTo('App\Address', 'address_id');
     }
+	
+	public function store() {
+		return $this->belongsTo('App\Store', 'store_id');
+	}
 }
 

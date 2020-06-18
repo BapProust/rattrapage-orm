@@ -22,4 +22,12 @@ class Store extends Model
 	public function address() {
         return $this->belongsTo('App\Address', 'address_id');
     }
+	
+	public function inventories() {
+        return $this->hasMany('App\Inventory', 'store_id');
+    }
+	
+	public function customers() {
+        return $this->hasMany('App\Customer', 'store_id');
+    }
 }

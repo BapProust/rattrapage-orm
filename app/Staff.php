@@ -29,4 +29,5 @@ class Staff extends Model
 	public function address() {
         return $this->belongsTo('App\Address', 'address_id');
     }
+	
 }

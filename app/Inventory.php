@@ -22,4 +22,8 @@ class Inventory extends Model
 	public function films() {
 		return $this->belongsTo('App\Film', 'film_id');
 	}
+	
+	public function store() {
+		return $this->belongsTo('App\Store', 'store_id');
+	}
 }
