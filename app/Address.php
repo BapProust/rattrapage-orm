@@ -23,4 +23,20 @@ class Address extends Model
 	const UPDATED_AT =  'last_update';
 
 	protected $table = 'address';
+	
+	public function staff() {
+        return $this->hasMany('App\Staff', 'address_id');
+    }
+	
+	public function customers() {
+        return $this->hasMany('App\Customer', 'address_id');
+    }
+	
+	public function city() {
+		return $this->belongsTo('App\City', 'city_id');
+	}
+	
+	public function stores() {
+        return $this->hasMany('App\Store', 'address_id');
+    }
 }

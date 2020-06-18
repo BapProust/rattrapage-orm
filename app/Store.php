@@ -18,4 +18,8 @@ class Store extends Model
 	const UPDATED_AT  = 'last_update';
 	
 	protected $table = 'store';
+	
+	public function address() {
+        return $this->belongsTo('App\Address', 'address_id');
+    }
 }
