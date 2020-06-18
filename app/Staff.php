@@ -30,4 +30,11 @@ class Staff extends Model
         return $this->belongsTo('App\Address', 'address_id');
     }
 	
+	public function rentals() {
+        return $this->hasMany('App\Rental', 'staff_id');
+    }	
+	
+	public function payments() {
+        return $this->hasMany('App\Payment', 'staff_id');
+    }
 }

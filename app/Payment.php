@@ -21,4 +21,8 @@ class Payment extends Model
 	const UPDATED_AT = 'last_update';
 	
 	protected $table = 'payment';
+	
+	public function staff() {
+		return $this->belongsTo('App\Staff', 'staff_id');
+	}
 }
