@@ -31,5 +31,13 @@ class Customer extends Model
 	public function store() {
 		return $this->belongsTo('App\Store', 'store_id');
 	}
+	
+	public function rentals() {
+        return $this->hasMany('App\Rental', 'customer_id');
+    }	
+	
+	public function payments() {
+        return $this->hasMany('App\Payment', 'customer_id');
+    }
 }
 

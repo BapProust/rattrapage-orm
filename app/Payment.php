@@ -24,5 +24,9 @@ class Payment extends Model
 	
 	public function staff() {
 		return $this->belongsTo('App\Staff', 'staff_id');
+	}	
+	
+	public function customer() {
+		return $this->belongsTo('App\Customer', 'customer_id');
 	}
 }
