@@ -24,5 +24,10 @@ class Rental extends Model
 	
 	public function inventory() {
 		return $this->belongsTo('App\Inventory', 'inventory_id');
+	}	
+	
+	public function staff() {
+		return $this->belongsTo('App\Staff', 'staff_id');
 	}
+	
 }
