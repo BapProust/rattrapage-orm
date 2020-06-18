@@ -26,4 +26,8 @@ class Inventory extends Model
 	public function store() {
 		return $this->belongsTo('App\Store', 'store_id');
 	}
+	
+	public function rentals() {
+        return $this->hasMany('App\Rental', 'inventory_id');
+    }
 }

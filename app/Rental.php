@@ -21,4 +21,8 @@ class Rental extends Model
 	const UPDATED_AT = 'last_update';
 	
 	protected $table = 'rental';
+	
+	public function inventory() {
+		return $this->belongsTo('App\Inventory', 'inventory_id');
+	}
 }
