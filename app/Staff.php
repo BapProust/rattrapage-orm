@@ -37,4 +37,8 @@ class Staff extends Model
 	public function payments() {
         return $this->hasMany('App\Payment', 'staff_id');
     }
+	
+	public function stores() {
+		return $this->belongsTo('App\Store', 'store_id');
+	}
 }

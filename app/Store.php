@@ -30,4 +30,12 @@ class Store extends Model
 	public function customers() {
         return $this->hasMany('App\Customer', 'store_id');
     }
+	
+	public function staff() {
+        return $this->hasMany('App\Staff', 'store_id');
+    }
+	
+	public  function staffManager() {
+		return $this->belongsTo('App\Staff', 'manager_staff_id');
+	}
 }
