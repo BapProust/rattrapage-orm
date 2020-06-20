@@ -29,4 +29,8 @@ class Payment extends Model
 	public function customer() {
 		return $this->belongsTo('App\Customer', 'customer_id');
 	}
+	
+	public function rental() {
+		return $this->belongsTo('App\Rental', 'rental_id');
+	}
 }

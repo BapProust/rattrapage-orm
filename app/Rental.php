@@ -33,4 +33,8 @@ class Rental extends Model
 	public function customer() {
 		return $this->belongsTo('App\Customer', 'customer_id');
 	}
+	
+	public function payments() {
+		return $this->hasMany('App\Payment', 'rental_id');
+	}
 }
