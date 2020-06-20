@@ -41,4 +41,8 @@ class Staff extends Model
 	public function stores() {
 		return $this->belongsTo('App\Store', 'store_id');
 	}
+	
+	public function customers() {
+		return $this->belongsToMany('App\Customer', 'payment', 'staff_id', 'customer_id')->distinct();
+	}
 }

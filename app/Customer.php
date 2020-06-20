@@ -39,5 +39,9 @@ class Customer extends Model
 	public function payments() {
         return $this->hasMany('App\Payment', 'customer_id');
     }
+	
+	public function staff() {
+		return $this->belongsToMany('App\Staff', 'payment', 'customer_id', 'staff_id')->distinct();
+	}
 }
 
