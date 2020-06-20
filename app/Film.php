@@ -47,4 +47,8 @@ class Film extends Model
 	public function film_text() {
 		return $this->hasOne('App\Film_text', 'film_id');
 	}
+	
+	public function stores() {
+		return $this->belongsToMany('App\Store', 'inventory', 'film_id', 'store_id')->distinct();
+	}
 }

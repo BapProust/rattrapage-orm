@@ -38,4 +38,8 @@ class Store extends Model
 	public  function staffManager() {
 		return $this->belongsTo('App\Staff', 'manager_staff_id');
 	}
+	
+	public function films() {
+		return $this->belongsToMany('App\Film', 'inventory', 'store_id', 'film_id')->distinct();
+	}
 }
